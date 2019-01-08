@@ -1,0 +1,99 @@
+page-chat {
+    .chat-container{
+        height: 100%;
+        width: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: row; 
+        align-items: flex-start;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .chat-window{
+        width: 48vw;
+        height: 48vw;
+        margin-top: calc( 4vw / 3 );
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+        background-color: #ddd;  
+        color: white;
+        font-size: 11px;      
+    }
+
+    .chat-title{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #488aff;
+        color: white;
+        z-index: 2; 
+    }
+
+    .chat-bubble-container{  
+        position: absolute;
+        height: 70%;
+        width: 100%;
+        padding: 10px;
+        padding-top: 15%;
+        overflow: scroll;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .chat-bubble{
+        padding: 5px 10px;
+        background-color: #488aff;  
+        border-radius: 20px;    
+        margin-bottom: 3px;  
+        float: left;
+        &.from-me{
+            float: right !important;
+            align-self: flex-end;
+            background-color: white;  
+            color: #333;  
+        }
+    }
+
+    .actions{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 20%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #ccc;
+        padding: 5px;
+        input{
+            color: #222;
+        }
+
+        button{
+            background-color: white; /* Green */
+            border: none;
+            color: #222;
+            padding: 7px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 13px;
+        }
+    }
+
+    @media(min-width: 600px) {
+        .chat-window {
+            width: calc( ( 100vw - ( (4vw / 3 ) * 4 ) ) / 3 );
+            height: calc( ( 100vw - ( (4vw / 3 ) * 4 ) ) / 3 );
+            margin-top: calc( 4vw / 3 );
+            border-radius: 10px;
+        }
+    }
+}
